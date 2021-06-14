@@ -54,4 +54,10 @@ if __name__ == '__main__':
 
         #plot with matplotlib
         plt.scatter(x_axis, y_axis)
+
+        #Generate trend line
+        z = numpy.polyfit(x_axis, y_axis, 1) #Returns vector of coefficients
+        p = numpy.poly1d(z) #Generates a polynomial from coefficients
+        plt.plot(x_axis, p(x_axis), 'r-')
+
         plt.show()
